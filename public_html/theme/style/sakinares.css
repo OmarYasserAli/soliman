@@ -1,0 +1,72 @@
+
+.soliman-sr{
+    width:50%;
+    overflow: hidden;
+    margin: auto;
+    padding: 100px 0 250px;
+    text-align: center;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+.soliman-slogo img{
+    width:300px;
+    margin-bottom: 40px;
+}
+
+.wapp img{
+    width:600px;
+    max-width:300px;
+    margin-bottom: 20px;
+}
+h1{
+    margin-bottom: 150px;
+    font-size: 70px;
+    color:#404041;
+}
+h1 p{
+    direction: ltr;
+}
+h2{
+    font-size: 70px;
+    color:#999;
+    margin-bottom: 70px;
+}
+h3{
+    font-size: 53px;
+    color:#999;
+    border-bottom: 2px solid #999;
+    padding-bottom: 5px;
+    width:80%;
+    margin: auto;
+    margin-bottom: 30px;
+    font-family: 'bahij-plain';
+}
+.soliman-sr-btn{
+    background: #048BBD;
+    color:#fff;
+    display: block;
+    width:80%;
+    margin: auto;
+    padding: 15px;
+    font-size: 52px;
+    font-family: 'bahij-bold';
+}
+.wapp+a{
+    display: block;
+}
+@media(max-width: 1000px){
+    .soliman-sr{
+        width:100% !important;
+    }
+    h1 {
+        margin-bottom: 70px;
+        font-size: 42px;
+        color: #404041;
+    }
+    .soliman-slogo img{
+    width:200px;
+    margin-bottom: 20px;
+    }
+}

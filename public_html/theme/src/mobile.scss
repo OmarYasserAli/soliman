@@ -1,0 +1,715 @@
+@media(min-width:1000) {
+    .soliman-header{
+        &-bg{
+            background-attachment: fixed;
+        }
+    }
+}
+@media(max-width:1199px) {
+    .wow {
+        animation-name: none !important;
+        visibility: visible !important;
+    }
+    .soliman-alerts{
+        width:95%;
+    }
+    header {
+        &.molhem {
+            .soliman-nav {
+                .soliman-navc {
+                    background: $mcolor;
+                }
+            }
+        }
+
+        .soliman-navbar {
+            display: none;
+        }
+
+        .soliman-nav {
+            position: absolute;
+            width: 100%;
+            display: block;
+            &-menu {
+                background: #fff url(../images/bar2.png) no-repeat;
+                background-size: 165%;
+                background-position: 0 100%;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                height: 100%;
+                z-index: 9991;
+                display: none;
+
+                &-social {
+                    text-align: center;
+                    margin-top: 50px;
+
+                    a {
+                        display: inline-block;
+                        margin: 0 15px;
+                        color: #999;
+
+                        svg {
+                            height: 20px;
+                        }
+                    }
+                }
+
+                ul {
+                    margin-top: 170px;
+
+                    li {
+                        ul {
+                            position: absolute;
+                            background: #f5f5f5;
+                            width: 100%;
+                            z-index: 999;
+                            margin-top: 0;
+                            display: none;
+                        }
+
+                        a {
+                            display: block;
+                            text-align: center;
+                            margin-bottom: 15px;
+                            color: #999;
+                            font-family: 'bahij-light';
+                            font-size: 16px;
+                            position: relative;
+
+                            &.active {
+                                font-family: 'bahij-bold';
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: -5px;
+                                    margin: auto;
+                                    height: 2px;
+                                    width: 100px;
+                                    opacity: 1;
+                                    background-color: $hcolor;
+                                    transition: all .5s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &c {
+                &.menu-active {
+                    .lang-btn {
+                        color: #999;
+                    }
+
+                    .nav-btn {
+                        background-image: url(../images/close.svg);
+                    }
+
+                    .soliman-navc-logo {
+                        a {
+                            background-image: url(../images/logo.svg);
+                        }
+                    }
+                }
+
+                position: relative;
+                z-index: 9999;
+                padding-top: 30px;
+
+                .lang-btn {
+                    float: left;
+                    margin-left: 20px;
+                    display: inline-block;
+                    margin-top: 20px;
+                    color: #fff;
+                }
+
+                .nav-btn {
+                    display: inline-block;
+                    margin-right: 20px;
+                    margin-top: 20px;
+                    cursor: pointer;
+                    background: url(../images/nav.svg) no-repeat;
+                    background-size: contain;
+                    width: 32px;
+                    height: 32px;
+                }
+
+                &-logo {
+                    text-align: center;
+
+                    a {
+                        display: inline-block;
+                        background: url(../images/mlogo.png) no-repeat;
+                        background-size: contain;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+
+        }
+
+        &:before {
+            display: none;
+        }
+
+        .soliman-header {
+            &-co {
+                text-align: right;
+                margin-top: 50%;
+                width:90%;
+                h1, h2{
+                    letter-spacing: -1px;
+                }
+            }
+        }
+    }
+    .soliman-product-map {
+        &-info {
+            width: 100%;
+            height: 40%;
+        }
+    }
+}
+
+@media(max-width:767px) {
+    footer .footer-copyright span{
+        display: block;
+        text-align: center;
+    }
+    .soliman-header-bg{
+        //background-attachment: scroll;
+    }
+    header .soliman-header-co {
+        margin-top: 58%;
+        margin-right: 20px;
+    }
+}
+@media(max-width:600px) {
+    .soliman-news-content,.soliman-news-content-related{
+        width: 95%;
+        margin: auto;
+    }
+    .soliman-product-about-co h1{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .soliman-product-features-size {
+        position: relative;
+        top: -35px;
+    }
+    .soliman-header-molehm h2 {
+        margin-bottom: 15px;
+        font-size: 45px;
+    }
+    header.inside.eventc{
+        height: 15vh;;
+    }
+    header.inside{
+        margin-bottom: 20px;
+    }
+    header.inside .soliman-navc{
+    background-color: #666;
+    height:100px;
+    &-logo a{
+        background-image: url(../images/logo.svg);
+    }
+}
+header.inside .soliman-header{
+    height:80vh;
+    &-co{
+        h1, h2{
+            font-size: 35px;
+        }
+    }
+}
+header.inside.nohead .soliman-header{
+    height:10vh;
+    .soliman-header-co{
+        display: none;
+    }
+}
+.feature-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.soliman-product-features-co .feature-item span {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.soliman-product-features-co .feature-item i {
+    margin: auto;
+    margin-bottom: 18px;
+    width: 40px;
+    height: 40px;
+}
+
+.soliman-product-features-co {
+    width: 90%;
+    margin: auto;
+}
+
+.soliman-product-features-co h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.soliman-product-about{
+    width:95%;
+    margin: auto;
+    &-co {
+        p {
+            text-align: right;
+            font-size: 14px;
+            color: #777;
+        }
+    }
+}
+.soliman-product-related{
+    display: none;
+}
+.soliman-product-gallery a{
+    height:400px;
+}
+    .soliman-values{
+        h1{
+            color:#008abe;
+        }
+        &-item{
+            p{
+                width:100%;
+            }
+        }
+    }
+    .soliman-badge{
+        background-size: 1000px;
+        background-position: 37% 101%;
+        h1{
+            font-size: 40px;
+        }
+    }
+    .soliman-management .soliman-management-group .soliman-management-groups .soliman-management-item-img{
+        height:300px;
+        img{
+            filter: grayscale(0);
+        }
+    }
+    .soliman-about {
+        padding: 0px 0 50px;
+         h1 {
+            font-size: 26px;
+            color: #008abe;
+            text-align: right;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 16px;
+            position: relative;
+            &:before{
+                content: "";
+                width: 3px;
+                height: 30px;
+                background-color: #008abe;
+                position: absolute;
+                top: 6px;
+                right: -13px;
+            }
+        }
+
+        p {
+            width: 90%;
+            font-family: 'bahij-plain';
+            font-size: 14px;
+            text-align: right;
+            text-align-last: right;
+        }
+    }
+
+    .soliman-vision {
+        padding: 50px 0 70px;
+        background-size: 1000px;
+    background-position: 37% 101%;
+
+        &-item {
+            width: 90%;
+            margin: auto;
+            margin-right: 30px;
+
+            h2 {
+                position: relative;
+                font-size: 24px;
+
+                &:before {
+                    right: -20px;
+                    height: 30px;
+                    top: 10px;
+                    width: 3px;
+                }
+            }
+
+            p {
+                margin-right: 0;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .soliman-services {
+        overflow: hidden;
+        padding: 60px 0 30px;
+        background-image: none;
+        &-items {
+            .soliman-services-item {
+                margin-bottom: 20px;
+                h3{
+                    font-size: 18px;
+                }
+                h4{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .soliman-products {
+        &-item {
+            a {
+                width: 40%;
+            }
+        }
+    }
+
+    .soliman-products-slick {
+        .soliman-products-item {
+            height:65vh;
+            a {
+                width: 40%;
+                right: 20%;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .soliman-projects {
+        padding: 50px 0 100px;
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .soliman-projects-items {
+            width: 95%;
+        }
+    }
+
+    footer {
+        padding: 50px 20px 100px;
+        background-size: 173% 43px;
+        background-position: 0 86%;
+        .footer-menu {
+            margin-bottom: 20px;
+
+            ul {
+                li {
+                    display: inline-block;
+                    width: 48%;
+                }
+            }
+        }
+
+        .footer-copyright {
+            span {
+                text-align: center;
+                display: block;
+                padding-top: 20px;
+                position: relative;
+                top:75px;
+            }
+            .flogo {
+                display: none;
+                width: 100%;
+                height: 200px;
+                margin-bottom: 30px;
+            }
+            .soliman-footer-social{
+                float: none;
+                width:100%;
+                >a {
+                    display: block;
+                    padding: 15px 25px;
+                    text-align: center;
+                }
+                .soliman-footer-social-icons{
+                    border-top:2px solid #989898;
+                    border-bottom:2px solid #989898;
+                    text-align: center;
+                    a{
+                        background:transparent;
+                        width: 22%;
+                        height: 52px;
+                        padding-top: 11px;
+                        svg{
+                            width:27px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .soliman-media-nav {
+        padding: 50px 0;
+
+        a {
+            margin: 0 15px;
+            font-size: 18px;
+        }
+    }
+
+    .soliman-news-content {
+        h1 {
+            font-size: 25px;
+            line-height: 38px;
+        }
+    }
+
+    .soliman-news-list {
+        padding: 50px 0;
+
+        .soliman-news-item {
+            width: 93%;
+            margin: auto;
+            margin-bottom: 60px;
+            a{
+                h2{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .soliman-investment-list .soliman-investment-group{
+        width:95%;
+        margin:auto;
+        margin-bottom:20px;
+    }
+    .soliman-files-list{
+        .soliman-files-item {
+            width: 93%;
+            margin: auto;
+            margin-bottom: 60px;
+            &-img{
+                height:350px;
+            }
+            a{
+                h2{
+                    font-size: 22px;
+                }
+                svg{
+                    font-size: 20px;
+                }
+            }
+            &-co{
+                h2{
+                    font-size: 21px;
+                    color:#008abe;
+                }
+            }
+        }
+    }
+    .soliman-events-list .soliman-events-item{
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .soliman-investment-list {
+        padding: 20px 0 70px;
+    }
+
+    .soliman-contact-item {
+        width: 90%;
+    }
+
+    .soliman-molehm-list {
+        padding: 0;
+        margin-top: 0;
+        &.inside{
+            margin-top: 20px;
+        }
+        .soliman-molehm-item {
+            height: 350px;
+            margin-bottom: 15px;
+
+            &-co {
+                span {
+                    margin-top: 105px;
+                }
+
+                h2 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+
+
+    .soliman-help-icons {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        bottom: 5%;
+        text-align: center;
+        display: block;
+        .col {
+            padding: 0 5px;
+        }
+
+        a {
+            // background: #0089BD;
+            // width: 90px;
+            // height: 70px;
+            // display: block;
+            // margin:auto;
+            // border-radius: 5px;
+            // strong {
+            //     display: block;
+            //     height: 39px;
+            //     padding-top: 9px;
+            //     svg{
+            //         width: 22px;
+            //         position: relative;
+            //         top: -2px;
+            //     }
+            // }
+
+            // span {
+            //     display: block;
+            //     font-size: 13px;
+            //     color: #fff;
+            // }
+        }
+    }
+}
+@media(max-width:411px){
+    .soliman-product-map{
+        &-info{
+            h2 {
+                font-size: 30px;
+                margin: 20px;
+            }
+        }
+    }
+    header .soliman-header-co {
+        margin-top: 85%;
+        h1,h2{
+            font-size: 40px;
+        }
+    }
+    footer{
+        .footer-copyright{
+            .soliman-footer-social{
+                >a{
+                    padding:5px 5px;
+                }
+            }
+            .soliman-footer-social-icons{
+                a{
+                    width:25px;
+                    height: 30px;
+                    margin-left: 2px;
+                }
+            }
+        }
+
+    }
+    .soliman-management{
+        &-group{
+
+            .soliman-management-groups {
+
+                .soliman-management-item{
+                    width:100%;
+                }
+            }
+        }
+
+    }
+}
+@media(max-width:375px){
+    header{
+        .soliman-header{
+            &-co{
+
+                width:90%;
+                margin-right: 20px;
+                h2{
+                    line-height: 53px;;
+                }
+            }
+        }
+
+    }
+
+    .soliman-help-icons{
+        a{
+            span{
+                font-size: 11px;
+            }
+        }
+    }
+    .soliman-news-list{
+        .soliman-news-item{
+            &-img{
+                height: 160px;
+            }
+            a{
+                h2{
+                    font-size: 20px;
+                    line-height: 31px;
+                }
+            }
+        }
+
+    }
+    .soliman-news-content-related-item h3{
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .soliman-news-content-related-item-img {
+        height: 180px;
+    }
+}
+@media(max-width:280px){
+    footer .footer-copyright .soliman-footer-social>a {
+        font-size: 14px;
+    }
+
+    footer .footer-copyright .soliman-footer-social-icons a {
+        width: 21px;
+        margin-left: 2px;
+        height: 29px;
+    }
+    .soliman-media-nav{
+        a{
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    .soliman-news-content h1 {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .soliman-news-content-co p {
+        font-size: 14px;
+        line-height: 29px;
+    }
+    .soliman-header-molehm h2 {
+        font-size: 27px;
+    }
+}

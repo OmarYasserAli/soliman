@@ -1,0 +1,1793 @@
+@import "./bootstrap-grid.css";
+@import "./animate.min.css";
+
+
+@font-face {
+    font-family: 'bahij-plain';
+    src: url('./fonts/Bahij_TheSansArabic-Plain.ttf');
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'bahij-bold';
+    src: url('./fonts/Bahij_TheSansArabic-Bold.ttf');
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'bahij-light';
+    src: url('./fonts/Bahij_TheSansArabic-Light.ttf');
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'bahij-slight';
+    src: url('./fonts/Bahij_TheSansArabic-SemiLight.ttf');
+    font-display: swap;
+    font-weight: 400;
+}
+
+
+$pcolor: #0388BB;
+$hcolor: #017faf;
+$mcolor: #595A5C;
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    direction: rtl;
+    font-family: 'bahij-plain';
+}
+h1, h2, h3, h4, h5, h6, button{
+    font-family: 'bahij-bold';
+    letter-spacing: 0;
+    word-spacing: 0;
+    font-weight: 400;
+}
+input, label, select, textarea{
+    font-family: 'bahij-plain';
+}
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+  }
+header{
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+    &.molhem{
+        .soliman-header{
+            height: 100px;
+            background: #fff !important;
+        }
+        .soliman-navbar{
+            background: #595a5c;
+            padding: 8px 0 8px;
+        }
+        .soliman-header{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        width:100%;
+        height: 120px;
+        background: url(../images/bar2.png) no-repeat;
+        background-size: 100%;
+        z-index: 999;
+        bottom: 100px;
+        left: 0;
+    }
+    .soliman-nav{
+        display: none;
+    }
+    .soliman-navbar{
+        position: fixed;
+        width:100%;
+        top:0px;
+        right:0;
+        padding-top: 20px;
+        z-index: 9999;
+        &.stick{
+            background: $mcolor;
+            animation: fadeInDown 1s;
+            padding: 8px 0 8px;
+        }
+        nav{
+            margin-top: 35px;
+            li{
+                float: right;
+                list-style: none;
+                margin-left: 20px;
+                position: relative;
+                &:hover{
+                    >ul{
+                        display: block;
+                    }
+                }
+                ul{
+                    position: absolute;
+                    background: #595a5c;
+                    width: 300px;
+                    top: 58px;
+                    animation: fadeInUp .7s;
+                    display: none;
+                    li{
+                        float: none;
+                        margin-left: 0;
+                        a{
+                            &::before{
+                                display: none;
+                            }
+                            padding: 15px 16px;
+                            display: block;
+                            border-bottom: 1px solid #666;
+                            &:hover{
+                                text-indent: 5px;
+                            }
+                        }
+                    }
+                }
+                a{
+                    color:rgb(192, 192, 192);
+                    font-size: 18px;
+                    padding-bottom: 30px;
+                    position: relative;
+                    transition: all .5s;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right:0;
+                        bottom: 20px;
+                        margin: auto;
+                        height: 3px;
+                        width:100%;
+                        opacity: 0;
+                        background-color: $hcolor;
+                        transition: all .5s;
+                    }
+                    > .menu-arrow{
+                        display: inline-block;
+                        border-top: 5px solid #D2D2D2;
+                        border-bottom: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-left: 5px solid transparent;
+                        position: relative;
+                        top: 3px;
+                        right:4px;
+                    }
+                    &:hover, &.active{
+                        color:#fff !important;
+                        &::before{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .soliman-logo{
+            width:93px;
+            height: 93px;
+            display: inline-block;
+            position: relative;
+            top:20px;
+            float: left;
+            img{
+                width:100%;
+                height: 100%;
+            }
+        }
+    }
+    .soliman-header{
+        position: relative;
+        width:100%;
+        height: 100vh;
+        margin-bottom: 20px;
+        &-bg{
+            position: absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            animation: shrink 30s infinite alternate;
+            &:before{
+                content: '';
+                position: absolute;
+                width:100%;
+                height: 100%;
+                background-color: rgba(0,0,0,.5);
+            }
+        }
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-co{
+            position: absolute;
+            text-align: left;
+            width:100%;
+            margin-top: 25%;
+            color:#FFF;
+            h1{
+                font-size: 50px;
+                font-family: 'bahij-plain';
+                font-weight: 800 !important;
+            }
+            h2{
+                font-size: 50px;
+                font-family: 'bahij-plain';
+                font-weight: 800 !important;
+            }
+        }
+    }
+}
+.soliman-about
+{
+    padding: 100px 0;
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+        color:$mcolor;
+    }
+    p{
+        text-align: justify;
+        text-align-last: center;
+        font-size: 18px;
+        color:#444;
+        width:70%;
+        margin: auto;
+        font-family: 'bahij-light';
+    }
+}
+
+.soliman-vision{
+    background: $mcolor url(../images/bar2.png) no-repeat;
+    background-size: contain;
+    background-position: 0 100%;
+    padding: 100px 0 150px;
+    &-item{
+        position: relative;
+        padding-bottom: 35px;
+        h2{
+            position: absolute;
+            color:#fff;
+            font-size: 30px;
+            &:before{
+                content: '';
+                width:2px;
+                height: 40px;
+                background: #fff;
+                position: absolute;
+                right:-30px;
+                top:5px;
+            }
+        }
+        p{
+            margin-right: 120px;
+            font-weight: 400px;
+            color:#fff;
+            font-size: 18px;
+            font-family: 'bahij-light';
+        }
+    }
+}
+.soliman-products{
+    position: relative;
+    .slick-dots{
+        position: absolute;
+        width:100%;
+        text-align: center;
+        bottom: 30px;
+        li{
+            display: inline-block;
+            margin: 0 5px;
+            button{
+                color:transparent;
+                border: none;
+                background: rgba(255, 255, 255, .5);
+                width:10px;
+                height: 10px;
+                cursor: pointer;
+                transition: all .5s;
+            }
+            &:hover , &.slick-active{
+                button{
+                    background: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+}
+.soliman-products-slick{
+    direction: ltr;
+    .soliman-products-item{
+        width:100%;
+        height: 90vh;
+        position: relative;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        a{
+            position: absolute;
+            top:15%;
+            right:10%;
+            background: rgba(255, 255, 255, .8);
+            color:rgb(88, 89, 91);
+            font-size: 22px;
+            z-index: 9999;
+            display: block;
+            width:20%;
+            direction: rtl;
+            padding: 10px;
+            &:before{
+                content: '';
+                height: 100%;
+                width:50px;
+                background: $pcolor;
+                position: absolute;
+                top: 0;
+                right:-50px;
+            }
+        }
+    }
+}
+
+.soliman-services{
+    padding: 150px 0;
+    background: url(../images/bar2.png) no-repeat;
+    background-size: contain;
+    background-position: 0 0;
+    h1{
+        text-align: center;
+        color: #595A5C;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    &-items{
+        .soliman-services-item{
+            background: $pcolor;
+            text-align: center;
+            width:90%;
+            margin: auto;
+            height: 230px;
+            color:#fff;
+            position: relative;
+            top:0;
+            transition: all .5s;
+            &:hover{
+                top:-10px;
+                box-shadow: 0 3px 10px 0px rgba(0,0,0,0.57);
+                background: $hcolor;
+            }
+            h3{
+                padding-top: 80px;
+                font-size: 22px;
+                margin-bottom: 5px;
+                font-family: 'bahij-plain';
+            }
+            h4{
+                font-size: 26px;
+                font-family: 'bahij-plain';
+            }
+        }
+    }
+}
+.soliman-projects{
+    overflow:hidden;
+    padding: 50px 0 150px;
+    h1{
+        text-align: center;
+        color: #595A5C;
+        font-size: 30px;
+        margin-bottom: 80px;
+    }
+    .soliman-projects-items{
+        width:80%;
+        margin: auto;
+        .soliman-projects-item{
+            display: block;
+            text-align: center;
+            position: relative;
+            width:72%;
+            height: 100px;
+            line-height: 100px;
+            margin: auto;
+            margin-bottom: 50px;
+            transition: all .5s;
+            img{
+                width: 100%;
+                height: 100%;
+                vertical-align: middle;
+                filter: grayscale(1);
+                object-fit: contain;
+                transition: all .5s;
+            }
+            &:hover{
+                img{
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+}
+.soliman-help-icons{
+    display: none;
+}
+footer{
+    background: $mcolor url(../images/bar2.png) no-repeat;
+    background-size: contain;
+    background-position: 0 95%;
+    padding: 70px 0 200px;
+    position: relative;
+    &.__load:before{
+        content: '';
+        position: absolute;
+        width:100%;
+        height: 100%;
+        background: rgba(0,0,0,.5) url(../images/wload.gif) no-repeat;
+        background-size: 32px;
+        background-position: center center;
+        z-index: 9999;
+        top:0;
+        left: 0;
+
+    }
+    .footer-menu{
+        margin-bottom: 20px;
+        p{
+            font-family: 'bahij-light';
+            color: #d4d2d2;
+            margin-bottom: 15px;
+        }
+        ul{
+            li{
+                list-style: none;
+                a{
+                    color: #ababab;
+                    display: block;
+                    margin-bottom: 10px;
+                    font-family: 'bahij-light';
+                    transition: all .5s;
+                    &:hover{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    .soliman-newsletter{
+        position: relative;
+        p{
+            font-family: 'bahij-light';
+            color:#d4d2d2;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        .soliman-footer-newsletter-co{
+            position: relative;
+            input{
+                width:100%;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #fff;
+                padding: 5px;
+                color:#fff;
+            }
+            a{
+                color: #fff;
+                position: absolute;
+                left: 0;
+                top: 10px;
+                cursor: pointer;
+                width: 15px;
+                transition: all .5s;
+                transform: rotate(-45deg);
+                &:hover{
+                    color:#000;
+                }
+            }
+        }
+    }
+    .footer-copyright{
+        .flogo{
+            display: block;
+            width:80px;
+            height: 80px;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        span{
+            color: #d4d2d2;
+            display: inline-block;
+            direction: ltr;
+            margin-top: 30px;
+        }
+        .soliman-footer-social{
+            position: relative;
+            float: left;
+            > a{
+                background: $pcolor;
+                color:#fff;
+                display: block;
+                padding: 5px 25px;
+                text-align: center;
+                transition: all .5s;
+                &:hover{
+                    background: $hcolor;
+                }
+            }
+            &-icons{
+                margin-bottom: 10px;
+                a{
+                    color:#fff;
+                    display: inline-block;
+                    width:33px;
+                    height: 33px;
+                    background: #757575;
+                    text-align: center;
+                    margin-left: 5px;
+                    padding-top: 7px;
+                    transition: all .5s;
+                    svg{
+                        width:16px;
+                    }
+                    &:hover{
+                        background: #fff;
+                        svg{
+                            color:$pcolor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    }
+
+
+.footer-copyright{
+    padding-top: 70px;
+    p{
+        text-align: center;
+        color:#fff;
+        direction: ltr;
+        font-size: 14px;
+    }
+}
+
+.soliman-values{
+    overflow: hidden;
+    padding: 100px 0;
+    h1{
+        text-align: center;
+        color: #595A5C;
+        font-size: 30px;
+        margin-bottom: 100px;
+    }
+    &-item{
+        width:95%;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 70px;
+        &img{
+            width:120px;
+            height: 120px;
+            position: relative;
+            margin: auto;
+            margin-bottom: 30px;
+            img{
+                position: absolute;
+                width:120px;
+                height: auto;
+                top:0;
+                bottom: 0;
+                right:0;
+                left: 0;
+                margin: auto;
+            }
+        }
+        h3{
+            color:$pcolor;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p{
+            width:80%;
+            margin: auto;
+            text-align: center;
+            text-align-last: center;
+        }
+    }
+}
+
+.soliman-badge{
+    background: $mcolor url(../images/bar2.png) no-repeat;
+    background-size: contain;
+    background-position: 0 100%;
+    padding: 100px 0 150px;
+    text-align: center;
+    h1{
+        font-size: 47px;
+        color:#fff;
+    }
+}
+
+.soliman-management{
+    padding: 100px 0;
+    .soliman-management-group{
+        h2{
+            font-size: 33px;
+            color:#000000b0;
+            position: relative;
+            margin-bottom: 40px;
+            &:before{
+                content: '';
+                width:100px;
+                height: 5px;
+                background: $pcolor;
+                position: absolute;
+                bottom: -5px;
+            }
+        }
+        .soliman-management-groups{
+            margin-bottom: 30px;
+            .soliman-management-item{
+                overflow: hidden;
+                width:90%;
+                margin-bottom: 50px;
+                &-img{
+                    width:100%;
+                    height: 400px;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                    img{
+                        width:100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all .5s;
+                        filter: grayscale(1);
+                    }
+                }
+                &:hover{
+                    img{
+                        filter: grayscale(0);
+                        transform: scale(1.1);
+                    }
+                }
+                span{
+                    font-family: 'bahij-bold';
+                    color: #00000075;
+                }
+                h3{
+                    color:#000000b0;
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                h6{
+                    color:$pcolor;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.soliman-contact{
+    background: #B3B6B7 url(../images/contact.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 50px 0;
+    h1{
+        text-align: center;
+        color:#595A5C;
+        font-family: 'bahij-plain';
+        margin-bottom: 20px;
+    }
+    &-item{
+        width:50%;
+        margin: auto;
+        input,textarea{
+            width:100%;
+            border: none;
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        textarea{
+            resize: none;
+            min-height: 200px;
+        }
+        button{
+            background: #0388BB;
+            color:#fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all .5s;
+            &:hover{
+                background: #017faf;
+            }
+        }
+    }
+}
+
+.soliman-contcat-address{
+    padding: 20px 0 80px;
+    overflow: hidden;
+    &-item{
+        width:70%;
+        margin: auto;
+        margin-bottom: 20px;
+        h2{
+            color:#008FC5;
+            font-family: 'bahij-plain';
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        p{
+            color:#595A5C;
+            font-size: 17px;
+        }
+    }
+    &-item2{
+        width:70%;
+        margin: auto;
+        margin-bottom: 20px;
+        h2{
+            color:#595A5C;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        p{
+            a{
+                color:#595A5C;
+                font-size: 17px;
+            }
+            color:#595A5C;
+            font-size: 17px;
+        }
+    }
+}
+.soliman-map{
+    background: #c2c2c2;
+    height: 600px;
+    position: relative;
+    iframe{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        top:0;
+        left:0;
+    }
+}
+
+.soliman-media-nav{
+    text-align: center;
+    padding: 100px 0;
+    a{
+        font-family: 'bahij-bold';
+        margin: 0 25px;
+        color:#666;
+        font-size: 24px;
+        position: relative;
+        transition: all .5s;
+        &:before{
+            content:'';
+            position: absolute;
+            width:0%;
+            height: 3px;
+            background: $pcolor;
+            bottom: -10px;
+            right:0;
+            left: 0;
+            margin: auto;
+            transition: all .5s;
+        }
+        &.active:before, &:hover:before{
+            width:100%;
+        }
+    }
+}
+
+.soliman-news-list{
+    padding: 50px 100px;
+    .soliman-news-item{
+        overflow: hidden;
+        margin-bottom: 60px;
+        border-bottom: 2px solid #888;
+        padding-bottom: 30px;
+        width: 90%;
+        a{
+            display: block;
+            color:#666;
+            transition: all .5s;
+            h2{
+                font-size: 26px;
+                line-height: 40px;
+                font-family: 'bahij-plain';
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            margin-bottom: 10px;
+        }
+        span{
+            display: block;
+            color:#999;
+        }
+        &-img{
+            width:100%;
+            height: 300px;
+            margin-bottom: 20px;
+            transition: all .5s;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .5s;
+            }
+        }
+        &:hover{
+            a{
+                color:$hcolor;
+            }
+        }
+    }
+}
+
+.soliman-events-list{
+    overflow: hidden;
+    padding: 0px 0 100px;
+    .soliman-events-item{
+        margin-bottom: 30px;
+        overflow: hidden;
+        width:95%;
+        &-img{
+            width:100%;
+            height: 250px;
+            border: 1px solid rgba(221,221,221,0.49);
+            display: block;
+            overflow: hidden;
+            margin-bottom: 10px;
+            transition: all .5s;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .5s;
+            }
+        }
+        span{
+            color:#999;
+            font-size: 12px;
+        }
+        h2{
+            text-align: right;
+            font-size: 16px;
+            font-family: 'bahij-plain';
+            color:#666;
+            transition: all .5s;
+        }
+        &:hover{
+
+            h2{
+                color:$hcolor;
+            }
+        }
+    }
+}
+
+.soliman-files-list{
+    overflow: hidden;
+    padding: 0px 0 100px;
+    .soliman-files-item{
+        margin-bottom: 30px;
+        overflow: hidden;
+        width:95%;
+        &-img{
+            width:100%;
+            height: 250px;
+            border: 1px solid rgba(221,221,221,0.49);
+            display: block;
+            overflow: hidden;
+            margin-bottom: 10px;
+            transition: all .5s;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .5s;
+            }
+        }
+        &-co{
+            position: relative;
+            h2{
+                text-align: right;
+                font-size: 16px;
+                font-family: 'bahij-plain';
+                color:#666;
+                transition: all .5s;
+            }
+            a{
+                position: absolute;
+                top: 5px;
+                left:5px;
+                svg{
+                    width:14px;
+                    color:$pcolor;
+                    transition: all .5s;
+                }
+                &:hover{
+                    svg{
+                        transform:scale(1.2);
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.soliman-investment-list{
+    padding: 100px 0;
+    .soliman-investment-group{
+        overflow: hidden;
+        margin-bottom: 50px;
+        h2{
+            color:#666;
+            position: relative;
+            margin-bottom: 40px;
+            &:before{
+                content: '';
+                width:150px;
+                height: 3px;
+                background: $pcolor;
+                position: absolute;
+                right:0;
+                bottom: -5px;
+            }
+        }
+        &-co{
+            a{
+                display: block;
+                width:100%;
+                height: 200px;
+                background: $mcolor;
+                text-align: center;
+                line-height: 200px;
+                color: #fff;
+                margin-bottom: 20px;
+                transition: all .5s;
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 26px;
+                    padding: 0 15px;
+                  }
+                &:hover{
+                    background: $hcolor;
+                }
+            }
+        }
+        &-store{
+            .soliman-investment-group-store-item{
+                display: none;
+            }
+            a{
+                display: block;
+                width:100%;
+                height: 200px;
+                background: $pcolor;
+                text-align: center;
+                color: #fff;
+                line-height: 200px;
+                margin-bottom: 20px;
+                transition: all .5s;
+                &:hover{
+                    background: $hcolor;
+                }
+            }
+        }
+    }
+}
+.soliman-events-gallery{
+    a{
+        display: block;
+        width:100%;
+        height: 250px;
+        margin-bottom: 20px;
+        transition: all .5s;
+        border: 1px solid rgba(221,221,221,0.43);
+        overflow: hidden;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .5s;
+        }
+        &:hover{
+            img{
+            }
+        }
+    }
+}
+
+.soliman-product-owners{
+    overflow: hidden;
+    padding: 0px 0 100px;
+    .soliman-product-about-owner{
+        text-align: center;
+        width:90%;
+        margin: auto;
+        &-img{
+            width:50%;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 10px;
+            img{
+                width:75%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        h3{
+            font-size: 16px;
+            color:#666;
+            margin-bottom: 5px;
+            font-family: 'bahij-light';
+        }
+        span{
+            display: block;
+            font-family: 'bahij-light';
+            font-size: 18px;
+            line-height: 28px;
+            color:#777;
+        }
+    }
+}
+
+.soliman-product-about{
+    padding: 50px 0;
+    .soliman-product-about-img{
+        overflow: hidden;
+        width:100%;
+        height: 200px;
+        margin-bottom: 20px;
+        text-align: center;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .soliman-product-about-owner{
+        text-align: center;
+        &-img{
+            width:50%;
+            height: 100px;
+            margin: auto;
+            margin-bottom: 10px;
+            img{
+                width:75%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        h3{
+            font-size: 16px;
+            color:#666;
+            margin-bottom: 5px;
+        }
+        span{
+            font-family: 'bahij-light';
+            display: block;
+            font-size: 14px;
+            line-height: 18px;
+            color:#777;
+        }
+    }
+    &-co{
+        h1{
+            color:#585858;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-family: 'bahij-plain';
+        }
+        p{
+            text-align: justify;
+            font-size: 16px;
+            color:#777777;
+            line-height: 30px;
+        }
+    }
+}
+
+
+.soliman-product-info{
+    padding: 50px 0 50px;
+    &.project-type{
+        background-color: #E6E6E6;
+    }
+    .soliman-product-info-item{
+        text-align: center;
+        p{
+            font-size: 15px;
+            color:#666;
+            margin-bottom: 10px;
+            font-family: 'bahij-light';
+        }
+        h3{
+            color: #3AB1E5;
+            font-size: 55px;
+            font-family: 'bahij-plain';
+        }
+    }
+}
+
+
+.soliman-product-gallery{
+    padding: 50px 0 100px;
+    overflow: hidden;
+    a{
+        display: block;
+        width:100%;
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+            transition: all .5s;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .5s;
+        }
+        &:before{
+            content:'';
+            position: absolute;
+            top:0;
+            left: 0;
+            width:100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            transition: all .5s;
+            opacity: 0;
+            z-index: 1;
+        }
+        &:hover{
+            &:before{
+                opacity: 1;
+
+            }
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.soliman-product-map{
+    background: #ddd;
+    height: 450px;
+    margin-bottom: 50px;
+    position: relative;
+    &-co{
+        iframe{
+            width:100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    }
+    &-info{
+        position: absolute;
+        width:30%;
+        background: rgba(0,0,0,0.5);
+        height: 100%;
+        z-index: 1;
+        h2{
+            color:#fff;
+            font-size: 43px;
+            margin: 25px;
+            font-family: 'bahij-plain';
+        }
+        a{
+            display: inline-block;
+            background: $pcolor;
+            color:#fff;
+            padding: 10px 20px;
+            border-radius: 3px;
+            margin: 0 30px;
+            transition: all .5s;
+            &:hover{
+                background: $hcolor;
+            }
+        }
+    }
+}
+
+
+.soliman-product-related{
+    padding:50px 0 100px;
+    h2{
+        color:#666;
+        font-size: 30px;
+        margin: 25px;
+        text-align: center;
+    }
+    .soliman-product-accordion {
+        width: 100%;
+        overflow: hidden;
+        margin: 50px auto;
+        ul {
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+        margin: 0;
+        padding: 0;
+        li {
+            display: table-cell;
+            vertical-align: bottom;
+            position: relative;
+            width: 33.33%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            transition: all 500ms ease;
+            border-left:10px solid #fff;
+
+            div {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            a {
+                display: block;
+                height: 400px;
+                width: 100%;
+                position: relative;
+                z-index: 3;
+                vertical-align: bottom;
+                padding: 15px 20px;
+                box-sizing: border-box;
+                color: #fff;
+                text-decoration: none;
+                transition: all 200ms ease;
+                * {
+                opacity: 0;
+                margin: 0;
+                width: 100%;
+                position: relative;
+                z-index: 5;
+                overflow: hidden;
+                transform: translateX(-20px);
+                transition: all 400ms ease;
+                }
+                h3 {
+                font-size: 24px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                top: 160px;
+                }
+                p {
+                top: 160px;
+                font-size: 16px;
+                line-height: 28px;
+                }
+            }
+            }
+        }
+        /*ul*/
+        &:hover {
+            li {
+            width: 10%;
+            &:hover {
+                width: 80%;
+                a {
+                background: rgba(0, 0, 0, 0.7);
+                * {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                }
+            }
+            }
+        }
+        }
+    }
+}
+
+
+  @media screen and (max-width: 600px) {
+    body {
+      margin: 0;
+    }
+    .accordion {
+      height: auto;
+      ul li,
+      ul li:hover,
+      ul:hover li,
+      ul:hover li:hover {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        -webkit-transition: none;
+        transition: none;
+      }
+    }
+  }
+
+
+
+.soliman-news-content-related{
+    padding-bottom: 100px;
+    h2{
+        color:#666;
+        font-size: 24px;
+        margin-bottom: 50px;
+        position: relative;
+        &:before{
+            content:'';
+            position: absolute;
+            height:3px;
+            width: 98px;
+            bottom: -2px;
+            background-color: $pcolor;
+        }
+    }
+    &-item{
+        margin-bottom: 20px;
+        h3{
+            font-size: 22px;
+            color: #616161;
+            margin-bottom: 15px;
+            line-height: 33px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        &-img{
+            width:100%;
+            height: 220px;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        p{
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        span{
+            color:#707070;
+        }
+    }
+}
+
+.soliman-pag{
+    text-align: center;
+    margin: 50px 0;
+    ul{
+        li{
+            list-style: none;
+            display: inline-block;
+            a{
+                display: inline-block;
+                margin: 0 10px;
+                color:#595a5c;
+                font-family: 'bahij-light';
+                transition: all .5s;
+                &.active, &:hover{
+                    color:#0388BB;
+                }
+                svg{
+                    width:12px;
+                    position: relative;
+                    top:6px;
+                }
+            }
+        }
+    }
+}
+
+.soliman-molehm-list{
+    padding: 50px 0;
+    overflow: hidden;
+    margin-top: 80px;
+    .soliman-molehm-item{
+        width:100%;
+        height: 500px;
+        display: block;
+        position: relative;
+        margin-bottom: 30px;
+        overflow: hidden;
+        &-co{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width:100%;
+            height: 100%;
+            text-align: center;
+            color:#fff;
+            z-index: 5;
+            &:before{
+                position: absolute;
+                content: '';
+                width:100%;
+                height: 100%;
+                background: rgba(0,0,0,.6);
+                top:0;
+                right:0;
+                z-index: -1;
+            }
+            span{
+                display: block;
+                margin-bottom: 10px;
+                margin-top: 180px;
+            }
+            h2{
+                margin-bottom: 5px;
+                font-size: 35px;
+            }
+            p{
+                font-family: 'bahij-light';
+            }
+        }
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
+            transition: all .5s;
+        }
+        &:hover{
+            img{
+                transform: scale(1.1);
+            filter: grayscale(0);
+            }
+        }
+    }
+}
+
+.soliman-product-features{
+    overflow: hidden;
+    padding: 50px 0 20px;
+    &-size{
+        span{
+            display: block;
+            text-align: center;
+            color:#666;
+        }
+        strong{
+            font-family: 'bahij-bold';
+            display: block;
+            text-align: center;
+            font-size: 60px;
+            color: #008FC5;
+        }
+    }
+    &-co{
+        h3{
+            color: #585858;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: bahij-plain;
+        }
+        .feature-item{
+            i{
+                display: block;
+                width:32px;
+                height: 32px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+            span{
+                font-size: 14px;
+                color:#666;
+                display: block;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.soliman-product-guarantee{
+    overflow: hidden;
+    padding: 50px 0 20px;
+    &-links{
+        margin-bottom: 30px;
+        &-item{
+            margin-bottom: 20px;
+            a{
+                display: block;
+                width:42px;
+                height: 42px;
+                border: 1px solid #008FC5;
+                margin: auto;
+                margin-bottom: 15px;
+                color:#666;
+                text-align: center;
+                padding-top: 7px;
+                svg{
+                    height: 26px;
+                }
+            }
+            span{
+                display: block;
+                text-align: center;
+                color:#666;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.soliman-header-molehm{
+    position: absolute;
+    top: 0;
+    right:0;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10%;
+    color:#fff;
+    span{
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 180px;
+        font-family: 'bahij-light';
+    }
+    h2{
+        margin-bottom: 5px;
+        font-size: 55px;
+    }
+    p{
+        font-family: 'bahij-light';
+    }
+}
+.soliman-molhem-content{
+    overflow: hidden;
+    &-co{
+        border-bottom: 2px solid #999;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        p{
+            color: #666;
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+    &-social{
+        margin-bottom: 100px;
+        a{
+            display: inline-block;
+            background: #0D95C8;
+            color:#fff;
+            width:50px;
+            height: 50px;
+            text-align: center;
+            padding-top: 10px;
+            border-radius: 3px;
+            margin: 0 5px;
+            transition: all .5s;
+            &:hover{
+                background: #0d7ea8;
+            }
+            svg{
+                height: 32px;
+            }
+        }
+    }
+}
+
+.soliman-news-content{
+    overflow: hidden;
+    &-img{
+        margin-bottom: 20px;
+        img{
+            width:100%;
+        }
+    }
+    &-co{
+        border-bottom: 2px solid #999;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        h1{
+            font-size: 45px;
+            color:#555;
+            line-height: 57px;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 32px;
+            color:#777;
+        }
+    }
+    &-social{
+        margin-bottom: 100px;
+        a{
+            display: inline-block;
+            background: #0D95C8;
+            color:#fff;
+            width:50px;
+            height: 50px;
+            text-align: center;
+            padding-top: 10px;
+            border-radius: 3px;
+            margin: 0 5px;
+            transition: all .5s;
+            &:hover{
+                background: #0d7ea8;
+            }
+            svg{
+                height: 32px;
+            }
+        }
+    }
+}
+
+.soliman-alerts{
+    overflow: hidden;
+    width:50%;
+    margin: 10px auto;
+    .soliman-alert{
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        &-danger{
+            background: #f8d7da;
+            color:#721c24;
+            border-color: #f5c6cb;
+        }
+        &-success{
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    }
+}
+
+
+.soliman-footer-newsletter-alert{
+    margin-top: 10px;
+    p{
+        font-size: 16px;
+        &.fail{
+            color:#f17a7a;
+        }
+        &.success{
+            color:#0aca3c;
+        }
+    }
+}
+.favorform{
+    position: fixed;
+    background: #59595A url(../images/bar2.png) no-repeat;
+    background-size: 1400px;
+    background-position: 35% 100%;
+    width:100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding-bottom: 60px;
+    border-radius: 3px;
+    z-index: 9999;
+    display: none;
+    p {
+        color: #fff;
+        font-size: 12px;
+        text-align: center;
+        position: relative;
+        top: -18px;
+        &.fail{
+            color:#f17a7a;
+        }
+        &.success{
+            color:#0aca3c;
+        }
+    }
+    &.__load:before{
+        content: '';
+        position: absolute;
+        width:100%;
+        height: 100%;
+        background: rgba(0,0,0,.5) url(../images/wload.gif) no-repeat;
+        background-size: 32px;
+        background-position: center center;
+        z-index: 9999;
+        top:0;
+        left: 0;
+
+    }
+    i {
+        background: #048BBE;
+        width: 32px;
+        display: inline-block;
+        height: 32px;
+        border-radius: 50%;
+        font-style: normal;
+        text-align: center;
+        line-height: 33px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color:#fff;
+        cursor: pointer;
+    }
+    h3{
+        color:#fff;
+        text-align: center;
+        padding: 50px 0 30px 0;
+    }
+    &-co{
+        width:90%;
+        margin: auto;
+        input,textarea{
+            background: #fff;
+            border: none;
+            display: block;
+            margin-bottom: 7px;
+            width:100%;
+            padding: 10px;
+        }
+        textarea{
+            resize: none;
+            min-height: 200px;
+        }
+        button{
+            display: block;
+            background: #048BBE;
+            border: none;
+            color: #fff;
+            width:100%;
+            padding: 10px;
+        }
+    }
+}
+
+
+@import "./en";
+@import "./mobile";

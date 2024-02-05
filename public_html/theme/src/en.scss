@@ -1,0 +1,106 @@
+.soliman_en{
+    body{
+        direction: ltr;
+    }
+    header .soliman-navbar nav li a>.menu-arrow{
+        left: 4px;
+        right:auto;
+    }
+    .soliman-navbar{
+        nav{
+            li{
+                float: left;
+                li{
+                    float: none;
+                }
+            }
+        }
+        .soliman-logo{
+            float: right;
+        }
+    }
+    .soliman-events-list .soliman-events-item h2{
+        text-align: left;
+    }
+    .soliman-investment-list .soliman-investment-group h2:before{
+        right:auto;
+        left: 0;
+    }
+    .soliman-vision-item{
+        h2{
+            &:before{
+                left: -30px;
+                right:auto;
+            }
+        }
+        p{
+            margin-left: 120px;
+            margin-right: auto;
+        }
+    }
+    .soliman-products-slick{
+        .soliman-products-item{
+            a{
+                left: 10%;
+                text-align: left;
+                &:before{
+                    left: -50px;
+                    right:auto;
+                }
+            }
+        }
+    }
+    footer{
+        .soliman-newsletter{
+            .soliman-footer-newsletter-co{
+                a{
+                    right:0;
+                    left: auto;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        .footer-copyright {
+            .flogo{
+                margin-left: -15px;
+            }
+            .soliman-footer-social{
+                float: right;
+                &-icons{
+                    a{
+                        margin-right: 5px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1199px){
+    .soliman_en{
+        header .soliman-navc .nav-btn {
+            transform: rotate(180deg);
+            margin-right: 0 !important;
+            margin-left: 20px;
+            margin-top: 8px!important;
+        }
+        header .soliman-navc .lang-btn{
+            margin-left: 0px !important;
+            margin-right: 20px;
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .soliman_en{
+        .soliman-vision-item p {
+            margin-left: 0 !important;
+        }
+        .soliman-products-slick .soliman-products-item a {
+            left: 20%  !important;
+        }
+    }
+}
